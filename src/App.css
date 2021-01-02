@@ -1,3 +1,76 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@media print {
+  .App-header {
+    display: none;
+    min-height: 0;
+  }
+  .card-search {
+    display: none;
+  }
+  .card-info {
+    display: none;
+  }
+}
+
+.card-result>.card>img {
+  width: 150px;
+}
+
+.card-result {
+  width: 150px;
+  float: left;
+  margin-right: 10px;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+}
+
+.card-list .card>img {
+  width: 2.4375in;
+  height: 3.4375in;
+}
+
+.card-list>li {
+  float: left;
+  width: 2.4375in;
+  margin-right: 10px;
+}
+
+@media print {
+  .card-list>li {
+    margin: 0;
+    height: 3.4375in;
+  }
+}
+
+.card>.watermark {
+  color: white;
+  transform: rotate(-45deg);
+  font-size: 0.42in;
+  opacity: 0.65;
+  position: absolute;
+  text-shadow: 2px 2px black;
+  top: 1in;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.card-result>.card>.watermark {
+  font-size: 40px;
+  top: 75px;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .App {
   text-align: center;
 }
@@ -13,15 +86,16 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen {
+  .App-header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: white;
+  }
 }
 
 .App-link {
