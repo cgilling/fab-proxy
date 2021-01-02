@@ -1,12 +1,11 @@
 import React from 'react'
 import lunr from 'lunr';
-import logo from './logo.svg';
 import './App.css';
 import cards from './cards.js'
 
 
 function Card(props) {
-  const { card, watermarkOptions, defaultWatermark, addCardToPrint } = props
+  const { card, watermarkOptions, defaultWatermark, addCardToPrint, removeCardToPrint } = props
   const [watermark, setWatermark] = React.useState(defaultWatermark);
   const imgUrl = "https://images.thepitchzone.com/cards/" + card.id + ".png";
   return (
@@ -17,7 +16,10 @@ function Card(props) {
         <div>{card.n}</div>
         <div>{"(" + card.ed + ")"}</div>
         {addCardToPrint && (
-          <button onClick={ () => addCardToPrint(card) }>Add</button>
+          <button onClick={() => addCardToPrint(card)}>Add</button>
+        )}
+        {removeCardToPrint && (
+          <button onClick={() => removeCardToPrint(card)}>Remove</button>
         )}
       </div>
     </div>
@@ -43,12 +45,13 @@ function CardSearch(props) {
     setSearchTerm(event.target.value);
   };
 
-  const results = searchTerm === "" ? [] : cardIdx.search("*" + searchTerm.trim().split(" ").join("* *") + "*").slice(0, 20).map((res) =>
+  const queryString = "*" + searchTerm.trim().split(" ").join("* *") + "*";
+  const results = searchTerm === "" ? [] : cardIdx.search(queryString).slice(0, 20).map((res) =>
     <SearchResult key={cardMap[res.ref].id} cardMap={cardMap} result={res} addCardToPrint={addCardToPrint} />
   );
-  console.log(results);
   return (
     <div className="card-search">
+      <label>Search For Cards: </label>
       <input
         type="text"
         placeholder="Search"
@@ -64,6 +67,10 @@ function CardSearch(props) {
 
 function App() {
   const cardIdx = lunr(function () {
+    // NOTE: we turn of stemming so things work as we would expect, without this if we search for
+    //       "twinn", "twinning blade" will not show up due to it presumably be stemmed as "twin".
+    this.pipeline.remove(lunr.stemmer)
+    this.searchPipeline.remove(lunr.stemmer)
     this.ref('id')
     this.field('n')
     this.field('ed')
@@ -78,23 +85,37 @@ function App() {
       [item['id']]: item,
     };
   }, {});
-  const [cardsToPrint, setCardsToPrint] = React.useState([cards[0], cards[1], cards[2], cards[3], cards[4]])
+  var _ = require('lodash');
+  const [cardsToPrint, setCardsToPrint] = React.useState([cards[0]])
   const addCardToPrint = card => {
-    setCardsToPrint([...cardsToPrint, card])
+    setCardsToPrint(_.sortBy([...cardsToPrint, card], [card => card.n]))
   };
-  console.log(cardsToPrint);
+  const removeCardToPrint = index => {
+    return card => {
+      var cardsCopy = [...cardsToPrint];
+      cardsCopy.splice(index, 1);
+      setCardsToPrint(cardsCopy);
+    }
+  };
+
   // TODO: I'm afraid once we allow changing watermark the key stuff might break it since the state for that
   //       is currently stored in Card (I speak from a lot of ignorance).
   const cardElems = cardsToPrint.map((card, i) =>
-    <li key={card.id + '-' + i}><Card card={card} watermarkOptions={['Proxy']} defaultWatermark={'Proxy'} /></li>
+    <li key={card.id + '-' + i}>
+      <Card card={card}
+        watermarkOptions={['Proxy', 'Missing', 'In Box']}
+        defaultWatermark={'Proxy'}
+        addCardToPrint={addCardToPrint}
+        removeCardToPrint={removeCardToPrint(i)} />
+    </li>
   );
-  console.log(cardElems);
   return (
     <div className="App">
       <header className="App-header">
-        <CardSearch cardIdx={cardIdx} cardMap={cardMap} addCardToPrint={addCardToPrint}/>
+        <CardSearch cardIdx={cardIdx} cardMap={cardMap} addCardToPrint={addCardToPrint} />
       </header>
       <div>
+        <h1 className="title">Card To Print</h1>
         <ul className="card-list">
           {cardElems}
         </ul>

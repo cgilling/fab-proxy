@@ -13,6 +13,9 @@ code {
   .card-info {
     display: none;
   }
+  .title {
+    display: none;
+  }
 }
 
 .card-result>.card>img {
@@ -63,8 +66,8 @@ code {
 }
 
 .card-result>.card>.watermark {
-  font-size: 40px;
-  top: 75px;
+  font-size: 36px;
+  top: 50px;
 }
 
 ul {
