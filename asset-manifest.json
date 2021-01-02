@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/fab-proxy/static/css/main.a66153a1.chunk.css",
-    "main.js": "/fab-proxy/static/js/main.93cde958.chunk.js",
-    "main.js.map": "/fab-proxy/static/js/main.93cde958.chunk.js.map",
+    "main.js": "/fab-proxy/static/js/main.71d9bf6c.chunk.js",
+    "main.js.map": "/fab-proxy/static/js/main.71d9bf6c.chunk.js.map",
     "runtime-main.js": "/fab-proxy/static/js/runtime-main.c82bbc27.js",
     "runtime-main.js.map": "/fab-proxy/static/js/runtime-main.c82bbc27.js.map",
     "static/js/2.0b8e23cf.chunk.js": "/fab-proxy/static/js/2.0b8e23cf.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c82bbc27.js",
     "static/js/2.0b8e23cf.chunk.js",
     "static/css/main.a66153a1.chunk.css",
-    "static/js/main.93cde958.chunk.js"
+    "static/js/main.71d9bf6c.chunk.js"
   ]
 }
