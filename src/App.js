@@ -32,9 +32,7 @@ function SearchResult(props) {
   const defaultWatermark = 'Proxy'
   const watermarkOptions = ['Proxy', 'Missing', 'In Box']
   return (
-    <li key={card.id} className="card-result">
-      <Card card={card} watermarkOptions={watermarkOptions} defaultWatermark={defaultWatermark} addCardToPrint={addCardToPrint} />
-    </li>
+      <Card key={card.id} card={card} watermarkOptions={watermarkOptions} defaultWatermark={defaultWatermark} addCardToPrint={addCardToPrint} />
   );
 }
 
@@ -58,9 +56,9 @@ function CardSearch(props) {
         value={searchTerm}
         onChange={handleChange}
       />
-      <ul className="card-results">
+      <div className="card-results">
         {results}
-      </ul>
+      </div>
     </div>
   );
 }
@@ -86,7 +84,7 @@ function App() {
     };
   }, {});
   var _ = require('lodash');
-  const [cardsToPrint, setCardsToPrint] = React.useState([cards[0]])
+  const [cardsToPrint, setCardsToPrint] = React.useState([cards[0], cards[0], cards[0]])
   const addCardToPrint = card => {
     setCardsToPrint(_.sortBy([...cardsToPrint, card], [card => card.n]))
   };
@@ -101,13 +99,11 @@ function App() {
   // TODO: I'm afraid once we allow changing watermark the key stuff might break it since the state for that
   //       is currently stored in Card (I speak from a lot of ignorance).
   const cardElems = cardsToPrint.map((card, i) =>
-    <li key={card.id + '-' + i}>
-      <Card card={card}
+      <Card key={card.id + '-' + i} card={card}
         watermarkOptions={['Proxy', 'Missing', 'In Box']}
         defaultWatermark={'Proxy'}
         addCardToPrint={addCardToPrint}
         removeCardToPrint={removeCardToPrint(i)} />
-    </li>
   );
   return (
     <div className="App">
@@ -115,10 +111,13 @@ function App() {
         <CardSearch cardIdx={cardIdx} cardMap={cardMap} addCardToPrint={addCardToPrint} />
       </header>
       <div>
-        <h1 className="title">Cards To Print</h1><span>use browser print function for printing</span>
-        <ul className="card-list">
+        <div className="title">
+          <h1>Cards To Print</h1>
+          <span>use browser print function for printing</span>
+        </div>
+        <div className="card-list">
           {cardElems}
-        </ul>
+        </div>
       </div>
     </div>
 
