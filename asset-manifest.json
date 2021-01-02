@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fab-proxy/static/css/main.8cbdb298.chunk.css",
+    "main.js": "/fab-proxy/static/js/main.3fa5e36c.chunk.js",
+    "main.js.map": "/fab-proxy/static/js/main.3fa5e36c.chunk.js.map",
+    "runtime-main.js": "/fab-proxy/static/js/runtime-main.5d60f5f0.js",
+    "runtime-main.js.map": "/fab-proxy/static/js/runtime-main.5d60f5f0.js.map",
+    "static/js/2.6d051538.chunk.js": "/fab-proxy/static/js/2.6d051538.chunk.js",
+    "static/js/2.6d051538.chunk.js.map": "/fab-proxy/static/js/2.6d051538.chunk.js.map",
+    "static/js/3.c7f9486f.chunk.js": "/fab-proxy/static/js/3.c7f9486f.chunk.js",
+    "static/js/3.c7f9486f.chunk.js.map": "/fab-proxy/static/js/3.c7f9486f.chunk.js.map",
+    "index.html": "/fab-proxy/index.html",
+    "static/css/main.8cbdb298.chunk.css.map": "/fab-proxy/static/css/main.8cbdb298.chunk.css.map",
+    "static/js/2.6d051538.chunk.js.LICENSE.txt": "/fab-proxy/static/js/2.6d051538.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/fab-proxy/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d60f5f0.js",
+    "static/js/2.6d051538.chunk.js",
+    "static/css/main.8cbdb298.chunk.css",
+    "static/js/main.3fa5e36c.chunk.js"
+  ]
+}
