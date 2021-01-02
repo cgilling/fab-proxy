@@ -115,7 +115,7 @@ function App() {
         <CardSearch cardIdx={cardIdx} cardMap={cardMap} addCardToPrint={addCardToPrint} />
       </header>
       <div>
-        <h1 className="title">Cards To Print</h1>
+        <h1 className="title">Cards To Print</h1><span>use browser print function for printing</span>
         <ul className="card-list">
           {cardElems}
         </ul>
