@@ -233,8 +233,8 @@ function App() {
       <Row className="main">
         <Col>
           <Alert variant="warning" className="no-print">
-            For best fit, printing in <strong>Landscape</strong> is highly recommended. For A4 you will likely need to adjust
-            your margins to be smaller as well.
+            For <strong>US Letter</strong> printing in <strong>Landscape</strong> is recommended (8 cards per page).
+            <br />For <strong>A4</strong> printing in <strong>Portrait</strong> with reduced margins is recommended (9 cards per page).
           </Alert>
           <div className="card-list">
             {cardElems}
