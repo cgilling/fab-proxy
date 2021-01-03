@@ -4,7 +4,7 @@ import {
   Button,
   Card,
   Dropdown,
-  DropdownButton, 
+  DropdownButton,
   Modal,
   InputGroup,
   Container,
@@ -232,12 +232,16 @@ function App() {
       </Modal>
       <Row className="main">
         <Col>
-        <div className="card-list">
-          {cardElems}
-        </div>
-        {cardElems.length === 0 && (
-          <Button onClick={() => setShowSearchModal(true)}>Add New Cards</Button>
-        )}
+          <Alert variant="warning" className="no-print">
+            Printing in <strong>Landscape</strong> is highly recommended. Currently printing in portrait downscales
+            the cards.
+          </Alert>
+          <div className="card-list">
+            {cardElems}
+          </div>
+          {cardElems.length === 0 && (
+            <Button onClick={() => setShowSearchModal(true)}>Add New Cards</Button>
+          )}
         </Col>
       </Row>
       <Navbar bg="light" variant="light" className="no-print">
