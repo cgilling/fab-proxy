@@ -233,8 +233,8 @@ function App() {
       <Row className="main">
         <Col>
           <Alert variant="warning" className="no-print">
-            Printing in <strong>Landscape</strong> is highly recommended. Currently printing in portrait downscales
-            the cards.
+            For best fit, printing in <strong>Landscape</strong> is highly recommended. For A4 you will likely need to adjust
+            your margins to be smaller as well.
           </Alert>
           <div className="card-list">
             {cardElems}

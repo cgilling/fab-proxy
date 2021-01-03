@@ -19,12 +19,6 @@ code {
   .title {
     display: none;
   }
-  .page-break-clear {
-    clear: both;
-  }
-  .page-break {
-    page-break-after: always;
-  }
   .fab-card>.watermark {
     opacity: 0.85;
   }
@@ -92,7 +86,7 @@ code {
     font-size: 0;
     text-align: left;
   }
-  .card {
+  .fab-card.card {
     background-color: transparent;
   }
 }
