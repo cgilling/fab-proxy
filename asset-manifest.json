@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/fab-proxy/static/css/main.a2d58744.chunk.css",
-    "main.js": "/fab-proxy/static/js/main.4dd166ca.chunk.js",
-    "main.js.map": "/fab-proxy/static/js/main.4dd166ca.chunk.js.map",
+    "main.css": "/fab-proxy/static/css/main.3af85271.chunk.css",
+    "main.js": "/fab-proxy/static/js/main.b0eea47d.chunk.js",
+    "main.js.map": "/fab-proxy/static/js/main.b0eea47d.chunk.js.map",
     "runtime-main.js": "/fab-proxy/static/js/runtime-main.6de97953.js",
     "runtime-main.js.map": "/fab-proxy/static/js/runtime-main.6de97953.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/fab-proxy/static/css/2.20aa2d7b.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.2fc9ac9c.chunk.js.map": "/fab-proxy/static/js/3.2fc9ac9c.chunk.js.map",
     "index.html": "/fab-proxy/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/fab-proxy/static/css/2.20aa2d7b.chunk.css.map",
-    "static/css/main.a2d58744.chunk.css.map": "/fab-proxy/static/css/main.a2d58744.chunk.css.map",
+    "static/css/main.3af85271.chunk.css.map": "/fab-proxy/static/css/main.3af85271.chunk.css.map",
     "static/js/2.2ba89f7f.chunk.js.LICENSE.txt": "/fab-proxy/static/js/2.2ba89f7f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6de97953.js",
     "static/css/2.20aa2d7b.chunk.css",
     "static/js/2.2ba89f7f.chunk.js",
-    "static/css/main.a2d58744.chunk.css",
-    "static/js/main.4dd166ca.chunk.js"
+    "static/css/main.3af85271.chunk.css",
+    "static/js/main.b0eea47d.chunk.js"
   ]
 }
