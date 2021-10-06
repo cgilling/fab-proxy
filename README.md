@@ -1,3 +1,7 @@
+# Notice of Deprecation
+
+Unfortunately I have not had time to keep up to date with this project and in the meantime someone else has taken the same idea and seems to be supporting it better. So head over to [fabproxy.com](https://fabproxy.com/) and try it out!
+
 # FAB Proxy
 
 A tool to help with printing out proxy cards for Flesh and Blood. Check it out in action [here](https://cgilling.github.io/fab-proxy/).
