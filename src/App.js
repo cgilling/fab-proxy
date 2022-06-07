@@ -1,28 +1,20 @@
-import React from 'react'
+import lunr from 'lunr';
+import React from 'react';
 import {
   Alert,
   Button,
-  Card,
-  Dropdown,
-  DropdownButton,
-  Modal,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-  Navbar,
-  Nav
+  Card, Col, Container, Dropdown,
+  DropdownButton, InputGroup, Modal, Nav, Navbar, Row
 } from 'react-bootstrap';
-import lunr from 'lunr';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
-import cards from './cards.js'
+import cards from './cards.js';
 
 
 function FABCard(props) {
   const { card, watermarkOptions, defaultWatermark, addCardToPrint, removeCardToPrint } = props
   const [watermark, setWatermark] = React.useState(defaultWatermark);
-  const imgUrl = "https://images.thepitchzone.com/cards/" + card.id + ".png";
+  const imgUrl = "https://cdn.thepitchzone.com/cards/" + card.id + "_200.png";
   return (
     <Card className="fab-card">
       <Card.Img src={imgUrl} />
@@ -45,7 +37,7 @@ function FABCard(props) {
           <Dropdown>
             <Dropdown.Toggle variant="outline-secondary" size="sm" id="dropdown-basic">
               Watermark
-          </Dropdown.Toggle>
+            </Dropdown.Toggle>
             <Dropdown.Menu>
               {watermarkOptions.map((option) => (
                 <Dropdown.Item key={option} as="button" onClick={() => { setWatermark(option) }}>{option}</Dropdown.Item>
@@ -117,7 +109,9 @@ function App() {
     // NOTE: we turn of stemming so things work as we would expect, without this if we search for
     //       "twinn", "twinning blade" will not show up due to it presumably be stemmed as "twin".
     this.pipeline.remove(lunr.stemmer)
+    this.pipeline.remove(lunr.stopWordFilter)
     this.searchPipeline.remove(lunr.stemmer)
+    this.searchPipeline.remove(lunr.stopWordFilter)
     this.ref('id')
     this.field('n')
     this.field('ed')
